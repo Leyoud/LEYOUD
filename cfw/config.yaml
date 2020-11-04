@@ -15,7 +15,7 @@ secret: ""
 # Profiles
 mode: rule
 ipv6: false
-authentication: []
+authentication: [] # [use1:passd1]
 hosts: {}
 
 dns:
