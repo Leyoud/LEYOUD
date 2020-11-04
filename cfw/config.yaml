@@ -5,7 +5,7 @@
 # General
 mixed-port: 7890
 redir-port: 7892
-external-ui: ./ # http://127.0.0.1:9090/ui
+external-ui: ./
 log-level: info
 allow-lan: true
 bind-address: "*"
@@ -15,7 +15,7 @@ secret: ""
 # Profiles
 mode: rule
 ipv6: false
-authentication: [] # [use1:passd1]
+authentication: []
 hosts: {}
 
 dns:
