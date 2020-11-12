@@ -603,7 +603,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/BanEasyPrivacy.yaml
-    url: https://raw.githubusercontent.com/Leyoud/Rules/master/Providers/BanEasyPrivacy.yaml
+    url: https://git.dler.io/Leyoud/Rules/master/Providers/BanEasyPrivacy.yaml
     interval: 43200
 
   BanProgramAD:
@@ -619,7 +619,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/MyList.yaml
-    url: https://raw.githubusercontent.com/Leyoud/Rules/master/Providers/MyList.yaml
+    url: https://git.dler.io/Leyoud/Rules/master/Providers/MyList.yaml
     interval: 43200
 
 rules:
