@@ -619,7 +619,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/MyList.yaml
-    url: https://git.dler.io/Leyoud/Rules/master/Providers/MyList.yaml
+    url: https://subcon.dlj.tf/getruleset?url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0xleW91ZC9SdWxlcy9tYXN0ZXIvTXlMaXN0Lmxpc3Q=&type=6
     interval: 43200
 
 rules:
