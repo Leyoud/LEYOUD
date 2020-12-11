@@ -603,7 +603,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/BanEasyPrivacy.yaml
-    url: https://subcon.dlj.tf/getruleset?url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQmFuRWFzeVByaXZhY3kubGlzdA&type=6
+    url: https://subcon.dlj.tf/getruleset?url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQmFuRWFzeVByaXZhY3kubGlzdA=&type=6
     interval: 43200
 
   BanProgramAD:
