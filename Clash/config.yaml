@@ -73,8 +73,8 @@ proxy-groups:
     type: select
     #use: [cfw]
     proxies:
-      - Fallback
       - Auto
+      - Fallback
       - LoadBalance
       - Relay
       - HK
