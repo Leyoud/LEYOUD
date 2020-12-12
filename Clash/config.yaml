@@ -305,49 +305,56 @@ proxy-groups:
       - SG
       - KR
   - name: HK # 香港节点
-    type: fallback
+    type: url-test
+    tolerance: 150
     #use: [hk]
     proxies:
       - Debug
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: JP # 日本节点
-    type: fallback
+    type: url-test
+    tolerance: 150
     #use: [jp]
     proxies:
       - Debug
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: US # 美国节点
-    type: fallback
+    type: url-test
+    tolerance: 150
     #use: [us]
     proxies:
       - Debug
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: TW # 台湾节点
-    type: fallback
+    type: url-test
+    tolerance: 150
     #use: [tw]
     proxies:
       - Debug
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: SG # 狮城节点
-    type: fallback
+    type: url-test
+    tolerance: 150
     #use: [sg]
     proxies:
       - Debug
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: KR # 韩国节点
-    type: fallback
+    type: url-test
+    tolerance: 150
     #use: [kr]
     proxies:
       - Debug
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: NF # 奈飞节点
-    type: fallback
+    type: url-test
+    tolerance: 150
     #use: [nf]
     proxies:
       - Debug
