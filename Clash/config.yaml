@@ -369,7 +369,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/ProxyGFWlist.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
     interval: 43200
 
   # 电报消息
@@ -377,7 +377,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Telegram.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
     interval: 43200
 
   # 油管视频
@@ -385,7 +385,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/YouTube.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
     interval: 43200
   
   # 奈飞视频
@@ -393,7 +393,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Netflix.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
     interval: 43200
 
   # 巴哈姆特
@@ -401,7 +401,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Bahamut.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml
     interval: 43200
 
   # Spotify音乐
@@ -409,7 +409,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Spotify.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
     interval: 43200
 
   # 国外媒体
@@ -417,7 +417,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/ProxyMedia.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
     interval: 43200
 
   # 国内媒体
@@ -426,35 +426,35 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Bilibili.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml
     interval: 43200
 
   iQiyi:
     type: http
     behavior: classical
     path: ./providers/rules/iQiyi.yaml
-    url: https://git.dler.io/lhie1/Rules/master/Clash/Provider/Media/iQiyi.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Media/iQiyi.yaml
     interval: 43200
 
   Letv:
     type: http
     behavior: classical
     path: ./providers/rules/Letv.yaml
-    url: https://git.dler.io/lhie1/Rules/master/Clash/Provider/Media/Letv.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Media/Letv.yaml
     interval: 43200
 
   Tencent Video:
     type: http
     behavior: classical
     path: ./providers/rules/Tencent_Video.yaml
-    url: https://git.dler.io/lhie1/Rules/master/Clash/Provider/Media/Tencent%20Video.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Media/Tencent%20Video.yaml
     interval: 43200
 
   Youku:
     type: http
     behavior: classical
     path: ./providers/rules/Youku.yaml
-    url: https://git.dler.io/lhie1/Rules/master/Clash/Provider/Media/Youku.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Media/Youku.yaml
     interval: 43200
   # End
 
@@ -463,7 +463,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/BilibiliHMT.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
     interval: 43200
 
   # 测速平台
@@ -471,7 +471,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Speedtest.yaml
-    url: https://git.dler.io/lhie1/Rules/master/Clash/Provider/Speedtest.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Speedtest.yaml
     interval: 43200
 
   # PayPal支付
@@ -479,7 +479,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/PayPal.yaml
-    url: https://git.dler.io/lhie1/Rules/master/Clash/Provider/PayPal.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/PayPal.yaml
     interval: 43200
 
   # 微软服务
@@ -487,7 +487,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Microsoft.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
     interval: 43200
 
   # 苹果服务
@@ -495,7 +495,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Apple.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
     interval: 43200
 
   # 谷歌FCM
@@ -503,7 +503,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/GoogleFCM.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml
     interval: 43200
 
   # 游戏平台
@@ -512,21 +512,21 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Epic.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Epic.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Epic.yaml
     interval: 43200
 
   Sony:
     type: http
     behavior: classical
     path: ./providers/rules/Sony.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Epic.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Epic.yaml
     interval: 43200
 
   Steam:
     type: http
     behavior: classical
     path: ./providers/rules/Steam.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
     interval: 43200
   # End
 
@@ -535,7 +535,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/NetEaseMusic.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetEaseMusic.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetEaseMusic.yaml
     interval: 43200
 
   # 全球直连列表
@@ -544,42 +544,42 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/LocalAreaNetwork.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
     interval: 43200
 
   GoogleCN:
     type: http
     behavior: classical
     path: ./providers/rules/GoogleCN.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml
     interval: 43200
 
   Scholar:
     type: http
     behavior: classical
     path: ./providers/rules/Scholar.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml
     interval: 43200
 
   UnBan:
     type: http
     behavior: classical
     path: ./providers/rules/UnBan.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml
     interval: 43200
 
   ChinaDomain:
     type: http
     behavior: classical
     path: ./providers/rules/ChinaDomain.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
     interval: 43200
 
   ChinaCompanyIp:
     type: http
     behavior: ipcidr
     path: ./providers/rules/ChinaCompanyIp.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
     interval: 43200
   # End
 
@@ -589,21 +589,21 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/BanAD.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
     interval: 43200
 
   BanEasyList:
     type: http
     behavior: classical
     path: ./providers/rules/BanEasyList.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
     interval: 43200
 
   BanEasyListChina:
     type: http
     behavior: classical
     path: ./providers/rules/BanEasyListChina.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
     interval: 43200
 
   BanEasyPrivacy:
@@ -617,7 +617,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/BanProgramAD.yaml
-    url: https://git.dler.io/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml
     interval: 43200
   # End
 
