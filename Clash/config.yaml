@@ -1,0 +1,712 @@
+#-------------------------------------------------------------#
+# Clash使用手册 https://lancellc.gitbook.io
+# Clash在线面板 http://clash.razord.top http://yacd.haishan.me
+#-------------------------------------------------------------#
+# General
+mixed-port: 7890
+redir-port: 7892
+external-ui: ./
+log-level: info
+allow-lan: true
+bind-address: "*"
+external-controller: 127.0.0.1:9090
+secret: ""
+#-------------------------------------------------------------#
+# Profiles
+mode: rule
+ipv6: false
+authentication: []
+hosts: {}
+
+#dns: {enable: true, enhanced-mode: redir-host, listen: 0.0.0.0:53, nameserver: [223.6.6.6, 223.5.5.5], fallback: [208.67.222.222, 208.67.220.220]}
+#tun: {enable: true, stack: gvisor, dns-hijack: [198.18.0.2:53], macOS-auto-route: true, macOS-auto-detect-interface: true}
+
+proxies:
+  - {name: 🎶 解锁网易云灰色歌曲(本地), type: http, server: 127.0.0.1, port: 16375, username: "", password: "", tls: false, skip-cert-verify: false}
+  - {name: 🎶 解锁网易云灰色歌曲(在线), server: music.desperadoj.com, port: 30001, type: ss, cipher: aes-128-gcm, password: desperadoj.com_free_proxy_emx2}
+  - {name: Debug, type: socks5, server: 127.0.0.1, port: 1080, username: "", password: "", tls: false, skip-cert-verify: false, udp: false}
+# - {name: ss1, type: ss, server: server, port: 443, cipher: chacha20-ietf-poly1305, password: password, udp: true}
+# - {name: ss2, type: ss, server: server, port: 443, cipher: chacha20-ietf-poly1305, password: password, plugin: obfs, plugin-opts: {mode: tls, host: bing.com}}
+# - {name: ss3, type: ss, server: server, port: 443, cipher: chacha20-ietf-poly1305, password: password, plugin: v2ray-plugin, plugin-opts: {mode: websocket, tls: true, skip-cert-verify: true, host: bing.com, path: /, mux: true, headers: {custom: value}}}
+# - {name: vmess, type: vmess, server: server, port: 443, uuid: uuid, alterId: 32, cipher: auto, udp: true, tls: true, skip-cert-verify: true, servername: example.com, network: ws,ws-path: /path, ws-headers: {Host: v2ray.com}}
+# - {name: vmess-h2, type: vmess, server: server, port: 443, uuid: uuid, alterId: 32, cipher: auto, network: h2, tls: true, h2-opts: {host:[http.example.com, http-alt.example.com], path: /}}
+# - {name: vmess-http, type: vmess, server: server, port: 443, uuid: uuid, alterId: 32, cipher: auto, udp: true, network: http, http-opts: {method: GET, path: [/, /video], headers: {Connection: [keep-alive]}}}
+# - {name: socks, type: socks5, server: server, port: 443, username: username, password: password, tls: true, skip-cert-verify: true, udp: true}
+# - {name: http, type: http, server: server, port: 443, username: username, password: password, tls: true, skip-cert-verify: true}
+# - {name: snell, type: snell, server: server, port: 44046, psk: yourpsk, version: 2, obfs-opts: {mode: http, host: bing.com}}
+# - {name: trojan, type: trojan, server: server, port: 443, password: yourpsk, udp: true, sni: example.com, alpn: [h2, http/1.1], skip-cert-verify: true}
+# - {name: ssr, type: ssr, server: server, port: 443, cipher: chacha20-ietf, password: password, obfs: tls1.2_ticket_auth, protocol: auth_sha1_v4, obfs-param: domain.tld, protocol-param: dd:cc, udp: true}
+
+# proxy-provider搭配subconverter使用教程
+# https://10101.io/2020/02/12/use-clash-proxy-provider-with-subconverter
+proxy-providers:
+  ## 所有节点
+  #cfw: {url: https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1%7C订阅链接2%7C订阅链接++...&insert=false&emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false, type: http, path: ./providers/cfw.yaml, interval: 43200, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+      
+  ## 香港节点
+  #hk: {url: https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1%7C订阅链接2%7C订阅链接++...&insert=false&include=HK%7CHongKong%7CHKT%7CHKBN%7CHGC%7CWTT%7CCMI%7C%5B%5E-%5D%E6%B8%AF%7C%E6%B8%AF&emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false, type: http, path: ./providers/hk.yaml, interval: 43220, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+
+  ## 日本节点
+  #jp: {url: https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1%7C订阅链接2%7C订阅链接++...&insert=false&include=%E6%97%A5%E6%9C%AC%7C%E5%B7%9D%E6%97%A5%7C%E4%B8%9C%E4%BA%AC%7C%E5%A4%A7%E9%98%AA%7C%E6%B3%89%E6%97%A5%7C%E5%9F%BC%E7%8E%89%7C%E6%B2%AA%E6%97%A5%7C%E6%B7%B1%E6%97%A5%7C%5B%5E-%5D%E6%97%A5%7CJP%7CJapan&emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false, type: http, path: ./providers/jp.yaml, interval: 43220, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+
+  ## 美国节点
+  #us: {url: https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1%7C订阅链接2%7C订阅链接++...&insert=false&include=%E7%BE%8E%7C%E6%B3%A2%E7%89%B9%E5%85%B0%7C%E8%BE%BE%E6%8B%89%E6%96%AF%7C%E4%BF%84%E5%8B%92%E5%86%88%7C%E5%87%A4%E5%87%B0%E5%9F%8E%7C%E8%B4%B9%E5%88%A9%E8%92%99%7C%E7%A1%85%E8%B0%B7%7C%E6%8B%89%E6%96%AF%E7%BB%B4%E5%8A%A0%E6%96%AF%7C%E6%B4%9B%E6%9D%89%E7%9F%B6%7C%E5%9C%A3%E4%BD%95%E5%A1%9E%7C%E5%9C%A3%E5%85%8B%E6%8B%89%E6%8B%89%7C%E8%A5%BF%E9%9B%85%E5%9B%BE%7C%E8%8A%9D%E5%8A%A0%E5%93%A5%7CUS%7CUnited%20States&emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false, type: http, path: ./providers/us.yaml, interval: 43220, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+
+  ## 台湾节点
+  #tw: {url: https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1%7C订阅链接2%7C订阅链接++...&insert=false&include=%E5%8F%B0%7C%E6%96%B0%E5%8C%97%7C%E5%BD%B0%E5%8C%96%7CTW%7CTaiwan&emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false, type: http, path: ./providers/tw.yaml, interval: 43220, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+
+  ## 狮城节点
+  #sg: {url: https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1%7C订阅链接2%7C订阅链接++...&insert=false&include=%E6%96%B0%E5%8A%A0%E5%9D%A1%7C%E5%9D%A1%7C%E7%8B%AE%E5%9F%8E%7CSG%7CSingapore&emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false, type: http, path: ./providers/sg.yaml, interval: 43220, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+
+  ## 韩国节点
+  #kr: {url: https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1%7C订阅链接2%7C订阅链接++...&insert=false&include=KR%7CKorea%7CKOR%7C%E9%A6%96%E5%B0%94%7C%E9%9F%A9%7C%E9%9F%93&emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false, type: http, path: ./providers/kr.yaml, interval: 43220, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+
+  ## 奈飞节点
+  #nf: {url: https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1%7C订阅链接2%7C订阅链接++...&insert=false&include=NF%7C%E5%A5%88%E9%A3%9E%7C%E8%A7%A3%E9%94%81%7CNetflix%7CNETFLIX%7CMedia&emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false, type: http, path: ./providers/nf.yaml, interval: 43220, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+
+proxy-groups:
+  - name: 🚀 代理服务 # 代理服务
+    type: select
+    disable-udp: false
+    #use: [cfw]
+    proxies:
+      - ♻️ 自动切换
+      - 🔯 故障转移
+      - 🔮 负载均衡
+      - 🔗 链式代理
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+      - Debug
+  - name: ♻️ 自动切换
+    type: url-test
+    lazy: true
+    tolerance: 150
+    disable-udp: false
+    #use: [cfw]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🔯 故障转移
+    type: fallback
+    lazy: true
+    disable-udp: false
+    #use: [cfw]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🔮 负载均衡
+    type: load-balance
+    lazy: true
+    disable-udp: false
+    strategy: consistent-hashing # or round-robin
+    #use: [cfw]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🔗 链式代理
+    type: relay
+    disable-udp: false
+    proxies:
+      - Debug
+  - name: 📲 电报消息
+    type: select
+    disable-udp: false
+    proxies:
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 📹 油管视频
+    type: select
+    disable-udp: false
+    proxies:
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🎥 奈飞视频
+    type: select
+    disable-udp: false
+    proxies:
+      - 🎥 奈飞节点
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 📺 巴哈姆特
+    type: select
+    disable-udp: false
+    proxies:
+      - 🇨🇳 台湾节点
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🎵 Spotify音乐
+    type: select
+    disable-udp: false
+    proxies:
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🌍 国外媒体
+    type: select
+    disable-udp: false
+    proxies:
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🌏 国内媒体
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: ✳️ 港澳台媒体
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: ⚡️ 测速平台
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🍃 PayPal支付
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: Ⓜ️ 微软服务
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🍎 苹果服务
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 📢 谷歌FCM
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🎮 游戏平台
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🎶 网易音乐
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🎶 解锁网易云灰色歌曲(本地)
+      - 🎶 解锁网易云灰色歌曲(在线)
+      - 🚀 代理服务
+      - ♻️ 自动切换
+  - name: 🎯 全球直连
+    type: select
+    disable-udp: false
+    proxies:
+      - DIRECT
+      - 🚀 代理服务
+      - ♻️ 自动切换
+  - name: 🆎 全球拦截
+    type: select
+    disable-udp: false
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    disable-udp: false
+    proxies:
+      - 🚀 代理服务
+      - ♻️ 自动切换
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+  - name: 🇭🇰 香港节点
+    type: url-test
+    lazy: true
+    tolerance: 150
+    disable-udp: false
+    #use: [hk]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🇯🇵 日本节点
+    type: url-test
+    lazy: true
+    tolerance: 150
+    disable-udp: false
+    #use: [jp]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🇺🇲 美国节点
+    type: url-test
+    lazy: true
+    tolerance: 150
+    disable-udp: false
+    #use: [us]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    lazy: true
+    tolerance: 150
+    disable-udp: false
+    #use: [tw]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🇸🇬 狮城节点
+    type: url-test
+    lazy: true
+    tolerance: 150
+    disable-udp: false
+    #use: [sg]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    lazy: true
+    tolerance: 150
+    disable-udp: false
+    #use: [kr]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎥 奈飞节点
+    type: url-test
+    lazy: true
+    tolerance: 150
+    disable-udp: false
+    #use: [nf]
+    proxies:
+      - Debug
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+
+# 规则参考地址
+# https://github.com/ACL4SSR/ACL4SSR https://github.com/lhie1/Rules
+rule-providers:
+  # 代理列表
+  ProxyGFWlist:
+    type: http
+    behavior: classical
+    path: ./providers/rules/ProxyGFWlist.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
+    interval: 43200
+
+  # 电报消息
+  Telegram:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Telegram.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    interval: 43200
+
+  # 油管视频
+  YouTube:
+    type: http
+    behavior: classical
+    path: ./providers/rules/YouTube.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    interval: 43200
+  
+  # 奈飞视频
+  Netflix:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Netflix.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+    interval: 43200
+
+  # 巴哈姆特
+  Bahamut:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Bahamut.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml
+    interval: 43200
+
+  # Spotify音乐
+  Spotify:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Spotify.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
+    interval: 43200
+
+  # 国外媒体
+  ProxyMedia:
+    type: http
+    behavior: classical
+    path: ./providers/rules/ProxyMedia.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
+    interval: 43200
+
+  # 国内媒体
+  # Start
+  Bilibili:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Bilibili.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml
+    interval: 43200
+
+  iQiyi:
+    type: http
+    behavior: classical
+    path: ./providers/rules/iQiyi.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Media/iQiyi.yaml
+    interval: 43200
+
+  Letv:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Letv.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Media/Letv.yaml
+    interval: 43200
+
+  Tencent Video:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Tencent_Video.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Media/Tencent%20Video.yaml
+    interval: 43200
+
+  Youku:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Youku.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Media/Youku.yaml
+    interval: 43200
+  # End
+
+  # 港澳台媒体
+  BilibiliHMT:
+    type: http
+    behavior: classical
+    path: ./providers/rules/BilibiliHMT.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
+    interval: 43200
+
+  # 测速平台
+  Speedtest:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Speedtest.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/Speedtest.yaml
+    interval: 43200
+
+  # PayPal支付
+  PayPal:
+    type: http
+    behavior: classical
+    path: ./providers/rules/PayPal.yaml
+    url: https://raw.fastgit.org/lhie1/Rules/master/Clash/Provider/PayPal.yaml
+    interval: 43200
+
+  # 微软服务
+  Microsoft:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Microsoft.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
+    interval: 43200
+
+  # 苹果服务
+  Apple:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Apple.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
+    interval: 43200
+
+  # 谷歌FCM
+  GoogleFCM:
+    type: http
+    behavior: classical
+    path: ./providers/rules/GoogleFCM.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml
+    interval: 43200
+
+  # 游戏平台
+  # Start
+  Epic:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Epic.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Epic.yaml
+    interval: 43200
+
+  Sony:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Sony.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Epic.yaml
+    interval: 43200
+
+  Steam:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Steam.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
+    interval: 43200
+  # End
+
+  # 网易音乐
+  NeteaseMusic:
+    type: http
+    behavior: classical
+    path: ./providers/rules/NetEaseMusic.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetEaseMusic.yaml
+    interval: 43200
+
+  # 全球直连列表
+  # Start
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    path: ./providers/rules/LocalAreaNetwork.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
+    interval: 43200
+
+  GoogleCN:
+    type: http
+    behavior: classical
+    path: ./providers/rules/GoogleCN.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml
+    interval: 43200
+
+  Scholar:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Scholar.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml
+    interval: 43200
+
+  UnBan:
+    type: http
+    behavior: classical
+    path: ./providers/rules/UnBan.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml
+    interval: 43200
+
+  ChinaDomain:
+    type: http
+    behavior: classical
+    path: ./providers/rules/ChinaDomain.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    interval: 43200
+
+  ChinaCompanyIp:
+    type: http
+    behavior: ipcidr
+    path: ./providers/rules/ChinaCompanyIp.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
+    interval: 43200
+  # End
+
+  # 全球广告拦截
+  # Start
+  BanAD:
+    type: http
+    behavior: classical
+    path: ./providers/rules/BanAD.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
+    interval: 43200
+
+  BanEasyList:
+    type: http
+    behavior: classical
+    path: ./providers/rules/BanEasyList.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
+    interval: 43200
+
+  BanEasyListChina:
+    type: http
+    behavior: classical
+    path: ./providers/rules/BanEasyListChina.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
+    interval: 43200
+
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    path: ./providers/rules/BanEasyPrivacy.yaml
+    url: https://subcon.dlj.tf/getruleset?url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQmFuRWFzeVByaXZhY3kubGlzdA=&type=6
+    interval: 43200
+
+  BanProgramAD:
+    type: http
+    behavior: classical
+    path: ./providers/rules/BanProgramAD.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml
+    interval: 43200
+  # End
+
+  # MyList
+  MyList:
+    type: http
+    behavior: classical
+    path: ./providers/rules/MyList.yaml
+    url: https://subcon.dlj.tf/getruleset?url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0xleW91ZC9SdWxlcy9tYXN0ZXIvTXlMaXN0Lmxpc3Q=&type=6
+    interval: 43200
+
+rules:
+  - RULE-SET,BanAD,🆎 全球拦截
+  - RULE-SET,BanEasyList,🆎 全球拦截
+  - RULE-SET,BanEasyListChina,🆎 全球拦截
+  - RULE-SET,BanEasyPrivacy,🆎 全球拦截
+  - RULE-SET,BanProgramAD,🆎 全球拦截
+  - RULE-SET,LocalAreaNetwork,DIRECT
+  - PROCESS-NAME,fdm.exe,DIRECT
+  - PROCESS-NAME,qbittorrent.exe,DIRECT
+  - PROCESS-NAME,DownloadService.exe,DIRECT
+  - PROCESS-NAME,baidunetdisk.exe,DIRECT
+  - PROCESS-NAME,aria2c.exe,DIRECT
+  - PROCESS-NAME,AriaNg.exe,DIRECT
+  - RULE-SET,Telegram,📲 电报消息
+  - RULE-SET,YouTube,📹 油管视频
+  - RULE-SET,Netflix,🎥 奈飞视频
+  - RULE-SET,Bahamut,📺 巴哈姆特
+  - RULE-SET,Spotify,🎵 Spotify音乐
+  - RULE-SET,ProxyMedia,🌍 国外媒体
+  - RULE-SET,BilibiliHMT,✳️ 港澳台媒体
+  - DOMAIN,cache.video.iqiyi.com,✳️ 港澳台媒体
+  - RULE-SET,Bilibili,🌏 国内媒体
+  - RULE-SET,iQiyi,🌏 国内媒体
+  - RULE-SET,Letv,🌏 国内媒体
+  - RULE-SET,Tencent Video,🌏 国内媒体
+  - RULE-SET,Youku,🌏 国内媒体
+  - RULE-SET,Speedtest,⚡️ 测速平台
+  - RULE-SET,PayPal,🍃 PayPal支付
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,GoogleFCM,📢 谷歌FCM
+  - RULE-SET,Epic,🎮 游戏平台
+  - RULE-SET,Sony,🎮 游戏平台
+  - RULE-SET,Steam,🎮 游戏平台
+  - RULE-SET,NeteaseMusic,🎶 网易音乐
+  - RULE-SET,MyList,🚀 代理服务
+  - RULE-SET,ProxyGFWlist,🚀 代理服务
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,Scholar,🎯 全球直连
+  - RULE-SET,UnBan,🎯 全球直连
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
