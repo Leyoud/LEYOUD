@@ -9,7 +9,7 @@ external-ui: ./
 log-level: info
 allow-lan: true
 bind-address: "*"
-external-controller: 127.0.0.1:9090
+external-controller: 0.0.0.0:9090
 secret: ""
 #-------------------------------------------------------------#
 # Profiles
