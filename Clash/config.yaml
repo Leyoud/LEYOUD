@@ -409,13 +409,6 @@ rule-providers:
     path: ./providers/rules/ProxyGFWlist.yaml
     url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
     interval: 43200
-    
-  ProcessNameProxy:
-    type: http
-    behavior: classical
-    path: ./providers/rules/ProcessNameProxy.yaml
-    url: https://raw.fastgit.org/Leyoud/Rules/master/ProcessNameProxy.yaml
-    interval: 43200
 
   MyListProxy:
     type: http
@@ -598,13 +591,6 @@ rule-providers:
     behavior: classical
     path: ./providers/rules/LocalAreaNetwork.yaml
     url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
-    interval: 43200
-
-  ProcessNameDirect:
-    type: http
-    behavior: classical
-    path: ./providers/rules/ProcessNameDirect.yaml
-    url: https://raw.fastgit.org/Leyoud/Rules/master/ProcessNameDirect.yaml
     interval: 43200
 
   MyListDirect:
