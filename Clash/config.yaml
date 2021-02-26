@@ -681,7 +681,6 @@ rules:
   - RULE-SET,BanEasyPrivacy,🆎 全球拦截
   - RULE-SET,BanProgramAD,🆎 全球拦截
   - RULE-SET,LocalAreaNetwork,DIRECT
-  - RULE-SET,ProcessNameDirect,DIRECT
   - RULE-SET,MyListDirect,DIRECT
   - RULE-SET,Telegram,📲 电报消息
   - RULE-SET,YouTube,📹 油管视频
@@ -704,7 +703,6 @@ rules:
   - RULE-SET,Sony,🎮 游戏平台
   - RULE-SET,Steam,🎮 游戏平台
   - RULE-SET,NeteaseMusic,🎶 网易音乐
-  - RULE-SET,ProcessNameProxy,🚀 代理服务
   - RULE-SET,MyListProxy,🚀 代理服务
   - RULE-SET,ProxyGFWlist,🚀 代理服务
   - RULE-SET,GoogleCN,🎯 全球直连
