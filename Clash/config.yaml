@@ -152,7 +152,7 @@ proxy-groups:
       - 🇨🇳 台湾节点
       - 🇸🇬 狮城节点
       - 🇰🇷 韩国节点
-  - name: 📽 巴哈姆特
+  - name: ✳️ 巴哈姆特
     type: select
     disable-udp: true
     proxies:
@@ -685,7 +685,7 @@ rules:
   - RULE-SET,Telegram,📲 电报消息
   - RULE-SET,YouTube,📹 油管视频
   - RULE-SET,Netflix,🎥 奈飞视频
-  - RULE-SET,Bahamut,📽 巴哈姆特
+  - RULE-SET,Bahamut,✳️ 巴哈姆特
   - RULE-SET,Spotify,🎵 Spotify音乐
   - RULE-SET,ProxyMedia,🌍 国外媒体
   - RULE-SET,BilibiliHMT,📺 哔哩哔哩
