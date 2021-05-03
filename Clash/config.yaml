@@ -369,6 +369,13 @@ rule-providers:
     path: ./providers/rules/ProxyGFWlist.yaml
     url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
     interval: 43200
+    
+  Google:
+    type: http
+    behavior: classical
+    path: ./providers/rules/Google.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml
+    interval: 43200
 
   MyListProxy:
     type: http
