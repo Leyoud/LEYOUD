@@ -374,7 +374,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./providers/rules/Google.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml
     interval: 43200
 
   MyListProxy:
@@ -671,6 +671,7 @@ rules:
   - RULE-SET,Steam,🎮 游戏平台
   - RULE-SET,NeteaseMusic,🎶 网易音乐
   - RULE-SET,MyListProxy,🚀 代理服务
+  - RULE-SET,Google,🚀 代理服务
   - RULE-SET,ProxyGFWlist,🚀 代理服务
   - RULE-SET,GoogleCN,🎯 全球直连
   - RULE-SET,Scholar,🎯 全球直连
